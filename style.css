@@ -2,5 +2,9 @@ a:hover{
     color: pink;
 }
 h3{
-    color: aquamarine;
+    color: rgb(0, 172, 115);
+    background: linear-gradient(to right,white,gray);
+}
+div{
+    
 }
