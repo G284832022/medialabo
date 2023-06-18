@@ -7,14 +7,25 @@ a{
 }
 h3{
     color: rgb(0, 172, 115);
-    background: linear-gradient(to right,white,rgb(224, 249, 235));
+    border-bottom-style:dotted ;
+    border-bottom-color:red ;
 }
 html{
     background-color: rgb(224, 249, 235);
 }
+
+    
 div{
     background-color: rgba(255, 255, 255, 0.8);
+    margin: 5px;
+    padding: 5px 5px 5px 5px;
+    border: solid 3px;
+    border-color: gray;
+    display: grid;
+   
+   
 }
+
 h1{
     color: chartreuse;
     text-shadow: navy 1px 0 10px;
