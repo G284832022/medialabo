@@ -214,3 +214,8 @@ for(let l = 0;l<2;l++){
   console.log("サブジャンル:"+data.results.shop[l].sub_genre.name);
   
 }
+
+let ps1 = document.querySelectorAll('dl');
+for(let p1 of ps1){
+  console.log(p1.textContent);
+}
