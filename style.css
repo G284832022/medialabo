@@ -38,12 +38,17 @@ h1{
 h2{
     color: rgb(90, 245, 87);
     background-color: rgba(129, 22, 175, 0.5);
+   height: 35px;
 }
 h3{
     color: rgb(0, 172, 115);
     border-bottom-style:dotted ;
     border-bottom-color:rgb(129, 22, 175) ;
+    height: 25px;
 }
 .main{
     grid-template-columns: 1fr 1fr;
+}
+p#subject{
+    height:90px;
 }

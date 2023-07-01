@@ -203,6 +203,7 @@ let data = {
 
 
 for(let l = 0;l<2;l++){
+  let kekka = 
   console.log("検索結果"+(l+1)+"件目");
   console.log("アクセス:"+data.results.shop[l].access);
   console.log("住所:"+data.results.shop[l].address);
@@ -219,3 +220,8 @@ let ps1 = document.querySelectorAll('dl');
 for(let p1 of ps1){
   console.log(p1.textContent);
 }
+
+let body = document.querySelector('body');
+let div = document.createElement('div');
+div.setAttribute("id","result");
+body.insertAdjacentElement('beforeend',div);
