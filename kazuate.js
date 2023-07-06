@@ -28,7 +28,7 @@ hantei();
 hantei();
 */
 // ボタンを押した後の処理をする関数 hantei() の定義
-function hantei(event) {
+function hantei() {
   // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
   kaisu++;
   let yo = document.querySelector('input[name="yoso"]');
