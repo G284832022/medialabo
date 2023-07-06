@@ -11,8 +11,12 @@ let yosou;
 
 let a = document.querySelector('span#kaisu'); 
 let b = document.querySelector('p#result');
-let c = document.querySelector('span#answer'); 
-hantei();
+let b1 = document.querySelector('span#yo');
+let c = document.querySelector('input#answer'); 
+let c1 = document.querySelector('#kaitou');
+c1.addEventListener('click',hantei);
+
+/*hantei();
 kaisu++;
 
 
@@ -22,12 +26,15 @@ kaisu++;
 hantei();
 
 hantei();
-
+*/
 // ボタンを押した後の処理をする関数 hantei() の定義
-function hantei() {
+function hantei(event) {
   // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
-  //kaisu++;
-  let yoso = 5;
+  kaisu++;
+  let yo = document.querySelector('input[name="yoso"]');
+  
+  let yoso = Number(yo.value);
+  b1.textContent=(yoso);
     a.textContent=(kaisu);
     c.textContent=(yoso);
     if(kaisu<4){
