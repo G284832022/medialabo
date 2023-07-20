@@ -1,4 +1,4 @@
-let data = {
+/*let data = {
   "results": {
     "api_version": "1.26",
     "results_available": 52,
@@ -224,4 +224,89 @@ for(let p1 of ps1){
 let body = document.querySelector('body');
 let div = document.createElement('div');
 div.setAttribute("id","result");
-body.insertAdjacentElement('beforeend',div);
+body.insertAdjacentElement('beforeend',div);*/
+let b = document.querySelector('#sendRequest');
+b.addEventListener('click',sendRequest)
+let kaisu =0;
+function sendRequest(){
+  let grm = document.querySelector('select#gurumes');
+  let idx = grm.selectedIndex;
+  console.log(idx);
+  let grms = '';
+
+  for(let a = 1;a<=17;a++){
+    if(a>9){
+      if(a===idx){
+        grms = 'G0'+a;
+      }
+    }else{
+      if(a===idx){
+        grms = 'G00'+a;
+     }
+    }
+  }
+  console.log(grms);
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/'+grms+'.json';
+  axios.get(url)
+  .then(showResult)
+  .catch(showError)
+  .then(finish);
+
+}
+function showResult(resp){
+  let data = resp.data;
+  if(typeof data === 'string'){
+    data = JSON.parse(data);
+  }
+    //出力する
+  if(kaisu !== 0){
+   let pyou = document.querySelectorAll('p');
+   let h3 = document.querySelectorAll('h3');
+    for(let h3r of h3){
+      h3r.remove();
+    }
+    for (let prem of pyou){
+      prem.remove();
+    }
+ }
+ for(let i=0;i<data.results.shop.length;i=i+1){
+  let divi = document.querySelector('div#info');  
+  let h3 = document.createElement('h3')
+  h3.textContent = ('店舗名:' + data.results.shop[i].name);
+  divi.insertAdjacentElement('beforeend', h3);
+  let pyo = document.createElement('p');
+  pyo.textContent = ('キャッチコピー:' + data.results.shop[i].catch);
+  divi.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
+  pyo.textContent = ('アクセス情報:' + data.results.shop[i].access);
+  divi.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
+  pyo.textContent = ('最寄駅:' + data.results.shop[i].station_name);
+  divi.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
+  pyo.textContent = ('住所:' + data.results.shop[i].address);
+  divi.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
+  pyo.textContent = ('予算:' + data.results.shop[i].budget.name);
+  divi.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
+  pyo.textContent = ('営業日時:' + data.results.shop[i].open);
+  divi.insertAdjacentElement('beforeend', pyo);
+}
+let divi = document.querySelector('div#research');  
+pyo = document.createElement('p');
+  pyo.textContent = ('検索結果は以上です。再検索も可能です。');
+  divi.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
+  pyo.textContent = ('条件を変えれば、再検索が可能です。');
+  divi.insertAdjacentElement('beforeend', pyo);
+  let butt = document.querySelector('button#sendRequest');
+  butt.textContent = '再検索する!'
+ kaisu = kaisu+1;
+}
+function showError(err){
+
+}
+function finish() {
+	console.log('Ajax 通信が終わりました');
+}
