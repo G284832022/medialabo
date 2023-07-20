@@ -258,7 +258,7 @@ function showResult(resp){
   if(typeof data === 'string'){
     data = JSON.parse(data);
   }
-    //出力する
+    
   if(kaisu !== 0){
    let pyou = document.querySelectorAll('p');
    let h3 = document.querySelectorAll('h3');
@@ -275,26 +275,33 @@ function showResult(resp){
   h3.textContent = ('店舗名:' + data.results.shop[i].name);
   divi.insertAdjacentElement('beforeend', h3);
   let pyo = document.createElement('p');
-  pyo.textContent = ('キャッチコピー:' + data.results.shop[i].catch);
-  divi.insertAdjacentElement('beforeend', pyo);
-  pyo = document.createElement('p');
-  pyo.textContent = ('アクセス情報:' + data.results.shop[i].access);
-  divi.insertAdjacentElement('beforeend', pyo);
-  pyo = document.createElement('p');
-  pyo.textContent = ('最寄駅:' + data.results.shop[i].station_name);
-  divi.insertAdjacentElement('beforeend', pyo);
-  pyo = document.createElement('p');
+  let img = document.createElement('img');
+  img.setAttribute("src",data.results.shop[i].logo_image);
+  divi.insertAdjacentElement('beforeend',pyo); 
+  pyo.insertAdjacentElement('beforeend',img);  
+  pyo = document.createElement('p'); 
   pyo.textContent = ('住所:' + data.results.shop[i].address);
   divi.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
   pyo.textContent = ('予算:' + data.results.shop[i].budget.name);
   divi.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
+  pyo.textContent = ('キャッチコピー:' + data.results.shop[i].catch);
+  divi.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
+
   pyo.textContent = ('営業日時:' + data.results.shop[i].open);
   divi.insertAdjacentElement('beforeend', pyo);
-}
-let divi = document.querySelector('div#research');  
-pyo = document.createElement('p');
+  pyo = document.createElement('p');
+  pyo.textContent = ('アクセス:' + data.results.shop[i].access);
+  divi.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
+  pyo.textContent = ('最寄駅:' + data.results.shop[i].station_name);
+  divi.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
+ }
+ let divi = document.querySelector('div#research');  
+ pyo = document.createElement('p');
   pyo.textContent = ('検索結果は以上です。再検索も可能です。');
   divi.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
