@@ -270,34 +270,36 @@ function showResult(resp){
     }
  }
  for(let i=0;i<data.results.shop.length;i=i+1){
-  let divi = document.querySelector('div#info');  
+  let divi = document.querySelector('div#info');
+  let div1 = document.createElement('div');
+  divi.insertAdjacentElement('beforeend', div1);  
   let h3 = document.createElement('h3')
   h3.textContent = ('店舗名:' + data.results.shop[i].name);
-  divi.insertAdjacentElement('beforeend', h3);
+  div1.insertAdjacentElement('beforeend', h3);
   let pyo = document.createElement('p');
   let img = document.createElement('img');
   img.setAttribute("src",data.results.shop[i].logo_image);
-  divi.insertAdjacentElement('beforeend',pyo); 
+  div1.insertAdjacentElement('beforeend',pyo); 
   pyo.insertAdjacentElement('beforeend',img);  
   pyo = document.createElement('p'); 
   pyo.textContent = ('住所:' + data.results.shop[i].address);
-  divi.insertAdjacentElement('beforeend', pyo);
+  div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
   pyo.textContent = ('予算:' + data.results.shop[i].budget.name);
-  divi.insertAdjacentElement('beforeend', pyo);
+  div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
   pyo.textContent = ('キャッチコピー:' + data.results.shop[i].catch);
-  divi.insertAdjacentElement('beforeend', pyo);
+  div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
 
   pyo.textContent = ('営業日時:' + data.results.shop[i].open);
-  divi.insertAdjacentElement('beforeend', pyo);
+  div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
   pyo.textContent = ('アクセス:' + data.results.shop[i].access);
-  divi.insertAdjacentElement('beforeend', pyo);
+  div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
   pyo.textContent = ('最寄駅:' + data.results.shop[i].station_name);
-  divi.insertAdjacentElement('beforeend', pyo);
+  div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
  }
  let divi = document.querySelector('div#research');  
