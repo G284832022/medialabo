@@ -262,16 +262,21 @@ function showResult(resp){
   if(kaisu !== 0){
    let pyou = document.querySelectorAll('p');
    let h3 = document.querySelectorAll('h3');
+   let shop = document.querySelectorAll('div#shop');
     for(let h3r of h3){
       h3r.remove();
     }
     for (let prem of pyou){
       prem.remove();
     }
+    for(let sho of shop){
+      sho.remove();
+    }
  }
  for(let i=0;i<data.results.shop.length;i=i+1){
   let divi = document.querySelector('div#info');
   let div1 = document.createElement('div');
+  div1.setAttribute('id','shop');
   divi.insertAdjacentElement('beforeend', div1);  
   let h3 = document.createElement('h3')
   h3.textContent = ('店舗名:' + data.results.shop[i].name);
@@ -303,7 +308,7 @@ function showResult(resp){
   pyo = document.createElement('p');
  }
  let divi = document.querySelector('div#research');  
- pyo = document.createElement('p');
+  pyo = document.createElement('p');
   pyo.textContent = ('検索結果は以上です。再検索も可能です。');
   divi.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
