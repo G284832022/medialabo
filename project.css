@@ -1,7 +1,7 @@
 body{
     background-color: rgba(68, 0, 137, 0.803);
     background-image:url(food.png) ;
-    text-align: center;
+    
 }
 div#shop{
     background-color: rgba(255, 255, 255, 0.9);
@@ -21,7 +21,19 @@ h2{
     color: rgb(193, 190, 0);
     text-shadow: white 1px 0 5px;
 }
+h3{
+    color: rgb(255, 0, 0);
+    text-shadow: green 1px 0 15px;
+}
+p{
+    text-align: left;
+}
 p#sub{
+    text-align: right;
     color: azure;
     text-shadow: green 1px 0 10px;
+}
+img{
+    width: 100px;
+    height: 100px;
 }
