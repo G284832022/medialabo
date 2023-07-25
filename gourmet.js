@@ -263,6 +263,7 @@ function showResult(resp){
    let pyou = document.querySelectorAll('p');
    let h3 = document.querySelectorAll('h3');
    let shop = document.querySelectorAll('div#shop');
+   let a1 = document.querySelectorAll('a');
     for(let h3r of h3){
       h3r.remove();
     }
@@ -271,6 +272,9 @@ function showResult(resp){
     }
     for(let sho of shop){
       sho.remove();
+    }
+    for(let b of a1){
+      b.remove();
     }
  }
  for(let i=0;i<data.results.shop.length;i=i+1){
@@ -299,19 +303,25 @@ function showResult(resp){
 
   pyo.textContent = ('営業日時:' + data.results.shop[i].open);
   div1.insertAdjacentElement('beforeend', pyo);
+  
   pyo = document.createElement('p');
   pyo.textContent = ('アクセス:' + data.results.shop[i].access);
   div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
   pyo.textContent = ('最寄駅:' + data.results.shop[i].station_name);
   div1.insertAdjacentElement('beforeend', pyo);
-  pyo = document.createElement('p');
+  let a = document.createElement('a');
+  a.setAttribute('href',data.results.shop[i].urls.pc);
+  a.textContent = ('お店の予約');
+  div1.insertAdjacentElement('beforeend', a);
  }
  let divi = document.querySelector('div#research');  
   pyo = document.createElement('p');
+  pyo.setAttribute('id','sub');
   pyo.textContent = ('検索結果は以上です。再検索も可能です。');
   divi.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
+  pyo.setAttribute('id','sub');
   pyo.textContent = ('条件を変えれば、再検索が可能です。');
   divi.insertAdjacentElement('beforeend', pyo);
   let butt = document.querySelector('button#sendRequest');
