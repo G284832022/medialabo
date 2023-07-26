@@ -298,7 +298,7 @@ function showResult(resp){
   pyo.textContent = ('キャッチコピー:' + data.results.shop[i].catch);
   div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
-  pyo.textContent = ("サジャンル:"+data.results.shop[l].genre.name);
+  pyo.textContent = ("サジャンル:"+data.results.shop[i].genre.name);
   div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
 
