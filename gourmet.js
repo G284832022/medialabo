@@ -298,6 +298,9 @@ function showResult(resp){
   pyo.textContent = ('キャッチコピー:' + data.results.shop[i].catch);
   div1.insertAdjacentElement('beforeend', pyo);
   pyo = document.createElement('p');
+  pyo.textContent = ("サジャンル:"+data.results.shop[l].genre.name);
+  div1.insertAdjacentElement('beforeend', pyo);
+  pyo = document.createElement('p');
 
   pyo.textContent = ('営業日時:' + data.results.shop[i].open);
   div1.insertAdjacentElement('beforeend', pyo);
